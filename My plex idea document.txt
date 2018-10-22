@@ -1,0 +1,23 @@
+ok take what i got and orginiz it
+grab aver file. DONE
+list every tv show DONE
+list every movie show. DONE
+
+check for proper name year rating.
+if missing any info leave alone DONE
+if found info compair to current name 
+comit to name change
+
+
+
+take what i got and 
+show missing files(make them zero files)
+
+take zero files and replace them small video 
+with comming soon files.
+
+make shure comming soon files are in 
+seperate folders from actual video media
+
+be able to list comming soon files of 
+missing actual videos vurses videos i do not have.
