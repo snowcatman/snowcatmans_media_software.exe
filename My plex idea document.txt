@@ -48,3 +48,9 @@ seperate folders from actual video media
 
 be able to list comming soon files of 
 missing actual videos vurses videos i do not have.
+===============================================================
+At the moment I want to write all the software in python.
+I am thinking kivy will take care of the GUI.
+Turning python software into an exicutible software for windows I think will be py2exe.exe(looking for advice for a better)
+will be using ffmpeg.exe for media file conversions
+needed free command line image converter
