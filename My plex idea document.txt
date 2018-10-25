@@ -1,3 +1,30 @@
+ok, I have been thinking. How am I goint to compair my files.
+I need a database. That has the correct information on commercial movies. (for personal use)
+So I will grab imdb.com database files to parse from. I will need to grab from other databases later.
+I need as much info from my media files (for personal use) as I can get, and make a database from them.
+I need to create a list comparison of all the information to comparing with.
+Then I need to compair each database to make a match. 
+As plex is able to use media center master information files and such. 
+We need to duplicate how Media Center Master leaves files for plex to grab from. 
+For example(.xml files, information inbedded in media files. etc.)
+Once I have a match. Sence I use plex media server. I want to use the plex naming convention. For all media content.
+Continue to orginise and filter. Write/Replace/Rename to files/folders.
+Once this is done. Then download and populate each piece of media with there it's from the imdb.com(pictures:cover art, poster's, etc)
+grab all information such as file size, quality of media, container information. 
+to show unifomity
+show end results
+convert all media content to standerd file container and respective quality. 
+clean all other information to mach and make uniform content control.
+
+Finally, This is were I need help. I need to grab information that show's ownership. legitamization of content.
+licences, recipts, anything that show's personal rights to the content.
+
+Also. this is were the media companies can help. Making a persons media content ligit. Educate the individual's of the world on how they can go about there use and busness practices.
+
+Finnally, open up to what happens to your media collection after you pass on. what rights do you have.
+
+Make a chart or list's of media content right and practices.
+
 ok take what i got and orginiz it
 grab aver file. DONE
 list every tv show DONE
