@@ -41,6 +41,7 @@ video_exts = ['.3g2', '.3gp', '.asf', '.asx', '.avc', '.avi', '.avs', '.bin', '.
 
 # ignore these files
 system_file_ignore = ['.py', 'empty_templet_file.mp4']
+# temp_file for coping from(will need to change this up later on.
 temp_file = 'empty_templet_file.mp4'
 
 # begin function "getlistoffiles" works well do not change.
@@ -130,7 +131,7 @@ def um_ignore_these_files(c_list):
 # This were everything comes together.
 # begin executable function "main" (((not finnished))) um, almost ready for clean up.
 def main():
-    dirname = os.getcwd()                               # get directory of this module(python script) make it a string
+    dirname = os.getcwd()                               # get directory of this module(python script) make it a string dirname
 
     listoffiles01 = []                                  # Define list listoffiles01 empty list
     listoffiles01 = getlistoffiles(dirname)             # step one. populate "listoffiles01" list with "getlistoffiles(dirname)"
@@ -167,15 +168,15 @@ if __name__ == '__main__':                              # If statement to check 
 # What i did was grabed code form googling and pieced it together, myself. If i had little
 # to no understanding at all then nothing would work right? So you could in a way call
 # this jumping in and learning to swim. lots of reading and playing around with code.
-# I take little responce of doing the all the coding on my own.
+# I take little responce of doing all the coding on my own.
 # But i am responsible for putting code in this file and making it work, um mostly.
 # Put together by Shawn D Quintal @ snowcatman@gmail.com and https://www.facebook.com/snowcatman
 # I can be found on irc at times.(note: if you are waiting for me there you might be waiting a long while.
-# As i am randomly online at time. However there are people there that can help you. google and read up on python first
+# As i am randomly online at times. However there are people there that can help you. google and read up on python first
 # and don't worry about making mistakes. Ask question even if you don't get it, how to code in python.
-# You will get better as you go. become familiar with what you are looking at. just my suggestion.
-# so you might want to let me know your going to be there way in advanced if you want to chat with me.)
-# in irc.freenode.net in (channel #python) making a fool of myself look for snowcatman
+# You will get better as you go. Become familiar with what you are looking at. Just my suggestion.
+# So you might want to let me know your going to be there way in advanced if you want to chat with me.)
+# in irc.freenode.net in (channel #python) making a fool of myself. So look for snowcatman
 # On a serious note: a few people in the irc channel have shown me code.
 # look for them and kindly think of there answer's before asking your questions again.
 # I myself am learning that the hard way. I was able to go back and look at my channel logs for the chat
@@ -185,13 +186,15 @@ if __name__ == '__main__':                              # If statement to check 
 # <moaz> <ikanobori> <han-solo> <moaz> <bjs> <Wooble> <Habbie> <metrognome> <nedbat> <noln> <altendky>
 
 # Again, Thank You to those that put up with me. :-)
-# this is part of files -- Goals_and_software_notes.txt -- shawn @ snowcatman@gmail.com
+# this is part of files -- Goals_and_software_notes.txt -- and put in github.com 
+# -- https://github.com/snowcatman/snowcatmans_media_software.exe -- 
+# shawn @ snowcatman@gmail.com
 
 # If you read this far and are inclined to be helping me.
-# Please add yourself down here to get credit. resend me a copy. please.
-# chris cquintal@gmail.com knows a bit of java code, was able to help me with another file and i used parts of that file
+# Please add yourself down here to get credit. resend me a copy. or just message me. please.
+# chris, My brother, cquintal@gmail.com knows a bit of java code, was able to help me with another file and i used parts of that file
 # here. he helped me with a little bit of structure, for not knowing a hole lot of python. something tells me he
-# knows more then he lets on.
+# knows more then he lets on. smiles... :-)
 # .
 
 # end of file.
