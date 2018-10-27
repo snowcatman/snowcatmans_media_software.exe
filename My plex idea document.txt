@@ -12,7 +12,7 @@ For example(.xml files, information inbedded in media files. etc.)
   Once we have a match. Sence I use plex media server. I want to use the plex naming convention. For all media content.
 Continue to orginise and filter. Write/Replace/Rename to files/folders.
 
-  Once this is done. Then download and populate each piece of media with there it's from the imdb.com(pictures:cover art, poster's, etc) grab all information such as file size, quality of media, container information. to show unifomity show end results
+  Once this is done. Then download and populate each piece of media with it's metadata from the imdb.com website(pictures:cover art, poster's, etc) grab all information such as file size, quality of media, container information. to show uniformity. Show end results
 convert all media content to standerd file container and respective quality. clean all other information to mach and make uniform content control.
 
 Finally, This is were I need help. I need to grab information that show's ownership. legitamization of content.
@@ -23,6 +23,11 @@ Also. this is were the media companies can help. Making a persons media content 
 Finnally, open up to what happens to your media collection after you pass on. what rights do you have.
 
 Make a chart or list's of media content rights and practices.
+
+Someware I would like to create a chart of movie statistics. movies own, what percent of movies do i own compared to what 
+is in the database files compaired with online resorce database stutistics you get the idea. Even make a compair self 
+with others statistics of owning media library from friends, compair ligitly owned media with person media verses unproven ownership
+of media. and on and on...
 
 ================================================
 ========old goals list still considering========
@@ -49,14 +54,14 @@ be able to list comming soon files of
 missing actual videos vurses videos i do not have.
 ================================================
 
-1. At the moment I want to write as much of the software in python as i can, mostly becouse its all that i really know.
-    java, basic, html, and other languages are considered. if yo teach me. smiles. i just want to understand the code as much as 
-    posible.
+1. At the moment I want to write as much of the software in python as I can. Mostly becouse its all that I really know at the moment.
+    java, basic, html, and other languages are considered. If you teach me. Smiles. I just want to understand the code as much as 
+    I can. I do know a bit of jave, html, css, mirc scripting and such.
 2. I am thinking kivy will take care of the GUI.
 3. Turning python software into an exicutible software for windows operating system, I think will be py2exe.exe
-    (looking for advice for a better)
+    (looking for advice for better)
 4. will be using ffmpeg.exe for media file conversions and handling
 5. will need sqlite databasing functionality
 6.
 
-needed free command line image converter
+think we needed free command line image converter, or can python conver for us?
