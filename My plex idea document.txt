@@ -1,17 +1,20 @@
 ok, I have been thinking. How am I goint to compair my files.
+(update 11/7/2018): as i have played with the database idea. i have found that using the web site is much more frutefull.
 I need a database. That has the correct information on commercial movies. (for personal use)
 So I will grab imdb.com database files to parse from. I will need to grab from other databases later.
 I need as much info from my media files (for personal use) as I can get, and make a database from them.
+(update 11/7/2018): I am thinking of creating a final in house what i have database or evan a what i grab gets to be 
+added to the database, still in my thoughts.
 I need to create a list comparison of all the information to comparing with.
 Then I need to compair each database to make a match. 
 As plex is able to use media center master information files and such. 
 We need to duplicate how Media Center Master leaves files for plex to grab from. 
 For example(.xml files, information inbedded in media files. etc.)
 Once I have a match. Sence I use plex media server. I want to use the plex naming convention. For all media content.
-Continue to orginise and filter. Write/Replace/Rename to files/folders.
-Once this is done. Then download and populate each piece of media with there it's from the imdb.com(pictures:cover art, poster's, etc)
+Continue to orginise and filter. Write/Replace/Rename to files/folders, rinse and repeate.
+Once this is done. Then download and populate each piece of media with it's the imdb.com(pictures:cover art, poster's, etc)
 grab all information such as file size, quality of media, container information. 
-to show unifomity
+to show uniformity
 show end results
 convert all media content to standerd file container and respective quality. 
 clean all other information to mach and make uniform content control.
@@ -23,7 +26,7 @@ Also. this is were the media companies can help. Making a persons media content 
 
 Finnally, open up to what happens to your media collection after you pass on. what rights do you have.
 
-Make a chart or list's of media content right and practices.
+Make a chart or list's of media content rights and practices.
 
 ok take what i got and orginiz it
 grab aver file. DONE
@@ -34,8 +37,6 @@ check for proper name year rating.
 if missing any info leave alone DONE
 if found info compair to current name 
 comit to name change
-
-
 
 take what i got and 
 show missing files(make them zero files)
@@ -54,3 +55,5 @@ I am thinking kivy will take care of the GUI.
 Turning python software into an exicutible software for windows I think will be py2exe.exe(looking for advice for a better)
 will be using ffmpeg.exe for media file conversions
 needed free command line image converter
+===============================================================
+(update 11/7/2018): whats on my mind, so far i have been grabing and learning of the pieces of coding that i think will halp me get the job done. at the moment i am learning python with kivy. i have made a template for a gui that i think will be ecceptable. I guess for nistalga, i want a splash screen for this template. then thinking about my next small move.
