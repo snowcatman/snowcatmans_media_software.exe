@@ -5,7 +5,6 @@ from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
-#  from kivy.graphics import *
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 from kivy.core.window import Window
@@ -147,7 +146,9 @@ class AboutMenu(DropDown):
         content = BoxLayout(orientation="vertical")
         popup = Popup(title="About software", size_hint=(None, None),
                       size=(400, 400), auto_dismiss=False, content=content)
-        label = Label(text="Template software information")
+        labela = Label(text="Snowcatmans Media Software")
+        labelb = Label(text="version .001")
+        lapelc = Label(text="Main Template")
         close_btn = Button(text="Close", pos_hint={"center_x": .5, "center_y": .9}, size_hint=(None, None),
                            size=(100, 50), on_press=popup.dismiss)
         content.add_widget(label)
