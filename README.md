@@ -11,4 +11,4 @@ Notes: for those that want to know
 windows 10 pro. with python 3 install and using vscode editor
 (2) You can reach me snowcatman@gmail.com subject S.M.S.001
 ```
-[You can get a hold of me here:]  (https://www.facebook.com/snowcatman)
+You can get a hold of me here:  https://www.facebook.com/snowcatman
