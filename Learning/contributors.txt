@@ -1,0 +1,9 @@
+Created from Windows 10
+On: Asus Core 3 4GB-Ram 500Gb-Drive
+Software Used: python 3.7.1, vscode, pycharm.
+
+I used chrome and firefox as my web browsers.
+I communicated with a few programs to learn. Mirc on freenode in 
+channels python, kivy, mirc, and unity3d. Discord on servers 
+kivy, python, (will edit and add more here). Facebook groups 
+python for beginners (will edit and add more here). 
