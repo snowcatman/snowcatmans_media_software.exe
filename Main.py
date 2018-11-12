@@ -136,7 +136,7 @@ class StartSplash:
 class FileMenu(DropDown):
     def clk_exit(self):
         App().stop()
-        Window.close()
+    #    Window.close()
 
     pass
 
@@ -144,14 +144,16 @@ class FileMenu(DropDown):
 class AboutMenu(DropDown):
     def popup_about(self):
         content = BoxLayout(orientation="vertical")
-        popup = Popup(title="About software", size_hint=(None, None),
+        popup = Popup(title="About:", size_hint=(None, None),
                       size=(400, 400), auto_dismiss=False, content=content)
         labela = Label(text="Snowcatmans Media Software")
         labelb = Label(text="version .001")
-        lapelc = Label(text="Main Template")
+        labelc = Label(text="11/12/2018")
         close_btn = Button(text="Close", pos_hint={"center_x": .5, "center_y": .9}, size_hint=(None, None),
                            size=(100, 50), on_press=popup.dismiss)
-        content.add_widget(label)
+        content.add_widget(labela)
+        content.add_widget(labelb)
+        content.add_widget(labelc)
         content.add_widget(close_btn)
         popup.open()
 
