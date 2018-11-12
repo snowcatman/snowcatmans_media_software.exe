@@ -1,5 +1,12 @@
+(Update 11/12/2018): I have been thinking awhile now that I want to move onto the rest of this program.
+In there of that, as I have been learning python code. I am making templates to use what I have learned.
+right now I should have a working (snowcatman_media_software.py) Template, a (SplashScreen.py) template and a few other files in a (learn) folder of what I am learning.
+
+I could use a partner right about now. someone that. that could share in there learning proccess and help me in the process to my goals.
+
+(11/12/2018): Be low this line are old notes.
 ok, I have been thinking. How am I goint to compair my files.
-(update 11/7/2018): as i have played with the database idea. i have found that using the web site is much more frutefull.
+(update 11/7/2018): as i have played with the database idea. i have found that using the web site is much more fruitfull.
 I need a database. That has the correct information on commercial movies. (for personal use)
 So I will grab imdb.com database files to parse from. I will need to grab from other databases later.
 I need as much info from my media files (for personal use) as I can get, and make a database from them.
