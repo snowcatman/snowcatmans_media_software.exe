@@ -1,5 +1,5 @@
 # snowcatmans_media_software.exe
-# Screensaver template created
-# Main GUI template created
-# noted and goals created
-# begining cleanup of this github underway.
+    learning to write to this README.md
+    Notes,Goals and other files are in Learning folder
+# Main GUI
+# SplashScreen
