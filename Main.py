@@ -13,7 +13,6 @@ from kivy.core.window import Window
 
 Builder.load_string("""
 #:import kivy kivy
-
 <Separator@Widget>:
     canvas:
         Color:
@@ -27,20 +26,16 @@ Builder.load_string("""
 <VSeparator@Separator>:
     size_hint_x: None
     width: dp(2)
-
 <MenuItem@Button>:
     size_hint_y: None
     height: 30
-
 <MenuButton@Button>:
     size_hint_x: None
     width: self.texture_size[0] + 20
-
 <MenuBar@BoxLayout>:
     orientation: 'horizontal'
     size_hint_y: None
     height: 30
-
 <FileMenu>:
     MenuItem:
         text: 'Open'
@@ -49,12 +44,10 @@ Builder.load_string("""
     MenuItem:
         text: 'Exit'
         on_press: root.clk_exit()
-
 <AboutMenu>
     MenuItem:
         text: 'About'
         on_press: root.popup_about()
-
 <MainScreen>:
     BoxLayout:
         orientation: 'vertical'
@@ -65,7 +58,6 @@ Builder.load_string("""
             MenuButton:
                 id: AboutMenuButton
                 text: 'Help'
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -73,13 +65,11 @@ Builder.load_string("""
             Widget
             HSeparator
             Widget
-
         BoxLayout:
             id: mainArea
             orientation: 'vertical'
             Label:
                 text: 'Main Area'
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -87,17 +77,14 @@ Builder.load_string("""
             Widget
             HSeparator
             Widget
-
         RelativeLayout:
             size_hint: 1, None
             size: 0, 0
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             height: 20
-
             canvas:
                 Color:
                     rgba: 0, 0, 0, 0
-
                 Rectangle:
                     pos: 0, 0
                     size: self.size
@@ -107,7 +94,6 @@ Builder.load_string("""
                 size: 0, 20
                 pos_hint: {'left': 1, 'y': 0}
                 spacing: 10
-
                 Label:
                     size_hint: None, None
                     size: 75, 20
@@ -118,14 +104,12 @@ Builder.load_string("""
                     size: 200, 20
                     text_size: self.size
                     text: '--------------------------------------------'
-
             Label:
                 pos_hint: {'right': 1}
                 size_hint: None, None
                 size: 150, 30
                 text_size: self.size
                 text: 'Example Template'
-
 """)
 
 
@@ -185,4 +169,4 @@ class ATemplateExample(App):
 
 
 if __name__ == '__main__':
-    ATemplateExample().run()
+ATemplateExample().run()

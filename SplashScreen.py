@@ -12,7 +12,7 @@ class Splash(App):
         Clock.schedule_once(self.start_timer)
 
     def start_timer(self, dt):
-        t = Timer(10, self.stop)
+        t = Timer(60, self.stop)
         t.start()             
 
     def build(self):
