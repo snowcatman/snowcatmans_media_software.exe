@@ -1,3 +1,6 @@
+(update 11/13/2018)
+needing to find out if there can be symbolic links on other operating system other than windows. like linux, etc.
+
 (Update 11/12/2018): I have been thinking awhile now that I want to move onto the rest of this program.
 In there of that, as I have been learning python code. I am making templates to use what I have learned.
 right now I should have a working (snowcatman_media_software.py) Template, a (SplashScreen.py) template and a few other files in a (learn) folder of what I am learning.
