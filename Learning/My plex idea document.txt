@@ -1,3 +1,9 @@
+(update 11/15/2018)
+Ok, keep coming back to github, as it has been very usefull. we have a main.py and a splashscreen.py so far. and what i want is an old school look i guess. where we have the splash screen come up and while that is happening you have the main program open up and loading just behind the splashscreen. as the splash screen is only ment to welcome the user and maybe show loading status and then fade away.
+you will be left with the main program ready to go.
+
+I am thinking becouse you can not open a secound window with kivy in its own proccess. that maybe a subprosses or in its own proccess that the splashscreen should open. so that is what i am studying now. how can we do that in python?
+
 (update 11/13/2018)
 needing to find out if there can be symbolic links on other operating system other than windows. like linux, etc.
 
