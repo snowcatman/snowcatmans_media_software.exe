@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, \
-QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, QMessageBox
+QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, QMessageBox, \
+QFileSystemModel, QTreeView, QVBoxLayout
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
  
@@ -9,18 +10,16 @@ class App(QMainWindow):
     def __init__(self):
         super().__init__()
         self.title = 'Snowcatman\'s Media Software Orginizer'
-        # self.left = 10
-        # self.top = 10
-        # self.width = 640
-        # self.height = 400
         self.initUI()
  
     def initUI(self):
         self.resize(640, 400)
-        self.setWindowTitle('My Template example')
+        self.setWindowTitle('Snowcatman\'s Media Software')
         self.center()
+        # I think these next two lines need modified
         self.model = QFileSystemModel()
-        self.model.setRootPath('')
+        self.model.setRootPath('') 
+        # thinking should use a setting to set root path
         
         mainMenu = self.menuBar() 
         fileMenu = mainMenu.addMenu('File')
@@ -56,7 +55,7 @@ class App(QMainWindow):
         # and the status bar
         windowLayout = QVBoxLayout()
         windowLayout.addWidget(self.tree)
-        self.setLayout(windowLayout)
+        # self.setLayout(windowLayout)
 
         self.statusBar().showMessage('Message in statusbar - Template.')
         self.show()

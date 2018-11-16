@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QFileSystemModel, QTreeView, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QFileSystemModel, QTreeView, \
+QWidget, QVBoxLayout
 from PyQt5.QtGui import QIcon
  
 class App(QWidget):
