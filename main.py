@@ -8,7 +8,7 @@ class App(QMainWindow):
  
     def __init__(self):
         super().__init__()
-        self.title = 'PyQt5 menu - Template'
+        self.title = 'Snowcatman\'s Media Software Orginizer'
         # self.left = 10
         # self.top = 10
         # self.width = 640
@@ -19,7 +19,8 @@ class App(QMainWindow):
         self.resize(640, 400)
         self.setWindowTitle('My Template example')
         self.center()
-        # self.setGeometry(self.left, self.top, self.width, self.height)
+        self.model = QFileSystemModel()
+        self.model.setRootPath('')
         
         mainMenu = self.menuBar() 
         fileMenu = mainMenu.addMenu('File')
@@ -39,14 +40,37 @@ class App(QMainWindow):
         aboutButton.setStatusTip('About Application')
         aboutButton.triggered.connect(self.about)
         helpMenu.addAction(aboutButton)
+        
+        #  setting up for the tree view
+        self.tree = QTreeView()
+        self.tree.setModel(self.model)
+ 
+        self.tree.setAnimated(False)
+        self.tree.setIndentation(20)
+        self.tree.setSortingEnabled(True)
+ 
+        self.tree.setWindowTitle("Dir View")
+        self.tree.resize(640, 480)
+
+        # show in main window to the left between the menubar 
+        # and the status bar
+        windowLayout = QVBoxLayout()
+        windowLayout.addWidget(self.tree)
+        self.setLayout(windowLayout)
 
         self.statusBar().showMessage('Message in statusbar - Template.')
         self.show()
 
     def about(self):
+        # need to make a frameless or boarderless window
+        # would like to have a window be about 300 x 400 
+        # would like to have several lines of information
+        # text centered in window
         QMessageBox.about(self, "About", "This is a Template")
 
     def center(self):
+        # This centers the main window to the center of 
+        # the monitor screen
         qr = self.frameGeometry()
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
