@@ -121,7 +121,6 @@ class StartSplash:
 class FileMenu(DropDown):
     def clk_exit(self):
         App().stop()
-        Window.close()
 
     pass
 
