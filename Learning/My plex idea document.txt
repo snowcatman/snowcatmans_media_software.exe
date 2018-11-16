@@ -1,4 +1,6 @@
 (update 11/15/2018)
+I was the python chat over on freenode. and was sujested that i take a look at pyqt5. so i am going to attempt to install it.
+
 Ok, keep coming back to github, as it has been very usefull. we have a main.py and a splashscreen.py so far. and what i want is an old school look i guess. where we have the splash screen come up and while that is happening you have the main program open up and loading just behind the splashscreen. as the splash screen is only ment to welcome the user and maybe show loading status and then fade away.
 you will be left with the main program ready to go.
 
