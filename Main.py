@@ -169,4 +169,4 @@ class ATemplateExample(App):
 
 
 if __name__ == '__main__':
-ATemplateExample().run()
+    ATemplateExample().run()
