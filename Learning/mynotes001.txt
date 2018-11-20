@@ -1,0 +1,44 @@
+# https://www.programiz.com/python-programming/closure
+
+def print_msg(msg):
+# This is the outer enclosing function
+
+    def printer():
+# This is the nested function
+        print(msg)
+
+    printer()
+
+# We execute the function
+# Output: Hello
+print_msg("Hello")
+
+# https://pastebin.com/mCkMMm4t?fbclid=IwAR1IIQqqSOL7BzECErkvn7c5VhnarNzEqQilJmbh_96-qdql2h9b3iV3NRI
+
+import subprocess
+import tempfile
+import os
+ 
+Username = ""
+ComputerName = ""
+OperatingSystem = ""
+fd, TemporaryFile = tempfile.mkstemp()
+ 
+try:
+    with os.fdopen(TemporaryFile, 'r+') as tmp:
+        subprocess.call(['whoami'], stdout = tmp)
+        subprocess.call(['systeminfo'], stdout = tmp)
+        #tmp.write(subprocess.run(["whoami"]))
+        #tmp.write(subprocess.run(["systeminfo"]))
+        #ComputerInformation = [line.rstrip('\n') for line in tmp]
+        ComputerInformation = tmp.readlines()
+finally:
+    os.remove(TemporaryFile)
+
+# 
+
+def print_msg(msg):
+    def printer():
+        print(msg)
+    printer()
+print_msg("Hello Programming for Beginners")

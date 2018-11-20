@@ -53,8 +53,8 @@ class App(QMainWindow):
 
         # show in main window to the left between the menubar 
         # and the status bar
-        windowLayout = QVBoxLayout()
-        windowLayout.addWidget(self.tree)
+        # windowLayout = QVBoxLayout()
+        # windowLayout.addWidget(self.tree)
         # self.setLayout(windowLayout)
 
         self.statusBar().showMessage('Message in statusbar - Template.')
