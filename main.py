@@ -1,26 +1,25 @@
 import sys
+from os.path import expanduser
 from PyQt5.QtWidgets import QMainWindow, QApplication, \
-QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, QMessageBox, \
-QFileSystemModel, QTreeView, QVBoxLayout
+QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, \
+QMessageBox, QFileSystemModel, QTreeView, QVBoxLayout, \
+QAbstractItemView, QFileDialog
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
- 
+
 class App(QMainWindow):
  
     def __init__(self):
         super().__init__()
-        self.title = 'Snowcatman\'s Media Software Orginizer'
+        self.title = 'PyQt5 menu - Template'
         self.initUI()
  
     def initUI(self):
         self.resize(640, 400)
-        self.setWindowTitle('Snowcatman\'s Media Software')
+        self.setWindowTitle('My Template example')
         self.center()
-        # I think these next two lines need modified
-        self.model = QFileSystemModel()
-        self.model.setRootPath('') 
-        # thinking should use a setting to set root path
-        
+
+        # menubar        
         mainMenu = self.menuBar() 
         fileMenu = mainMenu.addMenu('File')
         editMenu = mainMenu.addMenu('Edit')
@@ -28,48 +27,50 @@ class App(QMainWindow):
         searchMenu = mainMenu.addMenu('Search')
         toolsMenu = mainMenu.addMenu('Tools')
         helpMenu = mainMenu.addMenu('Help')
-        # exit button in file menu
+        # open folder in file menu in menu bar
+        openFolder = QAction(QIcon('unkown.png'), 'Open Folder', self)
+        openFolder.setShortcut('Ctrl+O')
+        openFolder.setStatusTip('Add Select Root Folder')
+        openFolder.triggered.connect(self.folderOpen)
+        fileMenu.addAction(openFolder)        
+        # exit button in file menu in menu bar
         exitButton = QAction(QIcon('unkown.png'), 'Exit', self)
         exitButton.setShortcut('Ctrl+Q')
         exitButton.setStatusTip('Exit application')
         exitButton.triggered.connect(self.close)
         fileMenu.addAction(exitButton)
-        # About button in help menu
+        # About button in help menu in menu bar
         aboutButton = QAction(QIcon('unkown.png'), 'About', self)
         aboutButton.setStatusTip('About Application')
         aboutButton.triggered.connect(self.about)
         helpMenu.addAction(aboutButton)
-        
-        #  setting up for the tree view
-        self.tree = QTreeView()
-        self.tree.setModel(self.model)
- 
-        self.tree.setAnimated(False)
-        self.tree.setIndentation(20)
-        self.tree.setSortingEnabled(True)
- 
-        self.tree.setWindowTitle("Dir View")
-        self.tree.resize(640, 480)
 
-        # show in main window to the left between the menubar 
-        # and the status bar
-        # windowLayout = QVBoxLayout()
-        # windowLayout.addWidget(self.tree)
-        # self.setLayout(windowLayout)
+# ----- defult tree view -- untell root folder added ------
+# we need to know each root directory to add a search peramitor
+# of the meadia in question. could use the open folder button 
+# in file menu. updating or adding to a defual tree view of selected 
+# folders would be nice .
+                                # I know i don't know exactly 
+                                # what i am doing. To add the 
+                                # treeview. to the main window.
+                                # I am a beginner. Thank you.
+
+        
+
+        
+
+# -----------------------------------------------------------
 
         self.statusBar().showMessage('Message in statusbar - Template.')
         self.show()
 
+    def folderOpen(self):
+        input_dir = QFileDialog.getExistingDirectory(None, 'Select a folder:', expanduser("~"))
+        
     def about(self):
-        # need to make a frameless or boarderless window
-        # would like to have a window be about 300 x 400 
-        # would like to have several lines of information
-        # text centered in window
         QMessageBox.about(self, "About", "This is a Template")
 
     def center(self):
-        # This centers the main window to the center of 
-        # the monitor screen
         qr = self.frameGeometry()
         cp = QDesktopWidget().availableGeometry().center()
         qr.moveCenter(cp)
