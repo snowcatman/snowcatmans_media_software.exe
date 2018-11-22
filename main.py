@@ -1,9 +1,9 @@
-import sys
+import sys, os
 from os.path import expanduser
 from PyQt5.QtWidgets import QMainWindow, QApplication, \
 QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, \
 QMessageBox, QFileSystemModel, QTreeView, QVBoxLayout, \
-QAbstractItemView, QFileDialog
+QAbstractItemView, QFileDialog, QTreeWidgetItem
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import pyqtSlot
 
@@ -28,19 +28,19 @@ class App(QMainWindow):
         toolsMenu = mainMenu.addMenu('Tools')
         helpMenu = mainMenu.addMenu('Help')
         # open folder in file menu in menu bar
-        openFolder = QAction(QIcon('unkown.png'), 'Open Folder', self)
+        openFolder = QAction(QIcon('unknown.png'), 'Open Folder', self)
         openFolder.setShortcut('Ctrl+O')
         openFolder.setStatusTip('Add Select Root Folder')
         openFolder.triggered.connect(self.folderOpen)
         fileMenu.addAction(openFolder)        
         # exit button in file menu in menu bar
-        exitButton = QAction(QIcon('unkown.png'), 'Exit', self)
+        exitButton = QAction(QIcon('unknown.png'), 'Exit', self)
         exitButton.setShortcut('Ctrl+Q')
         exitButton.setStatusTip('Exit application')
         exitButton.triggered.connect(self.close)
         fileMenu.addAction(exitButton)
         # About button in help menu in menu bar
-        aboutButton = QAction(QIcon('unkown.png'), 'About', self)
+        aboutButton = QAction(QIcon('unknown.png'), 'About', self)
         aboutButton.setStatusTip('About Application')
         aboutButton.triggered.connect(self.about)
         helpMenu.addAction(aboutButton)
@@ -56,7 +56,6 @@ class App(QMainWindow):
                                 # I am a beginner. Thank you.
 
         
-
         
 
 # -----------------------------------------------------------
@@ -66,7 +65,8 @@ class App(QMainWindow):
 
     def folderOpen(self):
         input_dir = QFileDialog.getExistingDirectory(None, 'Select a folder:', expanduser("~"))
-        
+        return input_dir
+
     def about(self):
         QMessageBox.about(self, "About", "This is a Template")
 

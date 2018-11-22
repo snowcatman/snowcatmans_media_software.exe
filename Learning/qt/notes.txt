@@ -1,0 +1,32 @@
+My qt5 notes: On windows 10
+
+To install pyqt5 to python.
+Open cmd.exe prompt.
+pip install pyqt5
+pip install pyqt5-tools
+
+To finding disign.exe and making shortcut to it.
+Open cmd.exe prompt type. 
+python
+A python shell will open. type.
+import site
+print (site.getsitepackages())
+take not to were root to last folder is and copy/paste .
+Go to your file explorer and paste to the file url bar.
+look for disigner.exe and right click the file and save as a shortcut.
+
+Use disign.exe and create a layout.
+Save your file to a usefull location.
+
+Optional
+https://likegeeks.com/pyqt5-tutorial/
+https://nitratine.net/blog/post/python-guis-with-pyqt/
+============================================================
+Convert your ui file to a py file.
+Open cmd.exe prompt and type a modified example of this next line.
+python -m PyQt5.uic.pyuic -x [FILENAME].ui -o [FILENAME].py
+
+Noting: That unless you made the changes in disigner that the layout 
+is static. Meaning that if you resize your window, that the 
+window contants do note resize with the window.
+=============================================================
