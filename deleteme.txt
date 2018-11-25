@@ -1,0 +1,24 @@
+Welcome, to my mess.
+
+    Ok, As you can see i am fumbling around making mistakes and passing 
+up interesting finds. today what i am doing is learning to stream and 
+code at the same time. and if you are reading this then you may want to 
+notice i am here all by myself. So i need to catch you up on what i am doing.
+
+    I have been learning to code for over a month now. and my goal is to 
+create a media software organizer. I use Plex server. with uses its own 
+naming convention. I have over 3800 media in my collection. hence 
+the software organizer. 
+
+So back to coding. If you have question. let me know. O' and i am thinking of
+continuing this if I get some feedback. thank you.
+
+I am at the point of figuring out why or what to do about if the user cancels 
+an open folder. For the moment. It seems to show revert to the c:\ directory.
+
+Back to searching for the answer. well if you seen it, i didn't.
+getting help see where this leads me. off to irc, freenode in the python chat channel.
+hm, might want to update. my gist.. 
+
+I have already been suggested to make a __init__ function. i am still 
+learning how to do that. one step at a time. they seem busy.

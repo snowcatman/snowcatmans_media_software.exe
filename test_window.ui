@@ -4,7 +4,7 @@
  <widget class="QMainWindow" name="MainWindow">
   <property name="minimumSize">
    <size>
-    <width>209</width>
+    <width>290</width>
     <height>373</height>
    </size>
   </property>
@@ -17,13 +17,13 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>191</width>
+      <width>271</width>
       <height>311</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>191</width>
+      <width>271</width>
       <height>311</height>
      </size>
     </property>
@@ -38,7 +38,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>209</width>
+     <width>290</width>
      <height>22</height>
     </rect>
    </property>
