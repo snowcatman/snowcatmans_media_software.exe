@@ -2,10 +2,18 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1274</width>
+    <height>785</height>
+   </rect>
+  </property>
   <property name="minimumSize">
    <size>
-    <width>290</width>
-    <height>373</height>
+    <width>600</width>
+    <height>400</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -16,20 +24,105 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
-      <width>271</width>
-      <height>311</height>
+      <y>30</y>
+      <width>241</width>
+      <height>731</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>271</width>
-      <height>311</height>
+      <width>241</width>
+      <height>731</height>
      </size>
     </property>
     <property name="whatsThis">
      <string>Root Folder and Files.
    As they are now.</string>
+    </property>
+   </widget>
+   <widget class="QTreeView" name="treeView_future">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>30</y>
+      <width>241</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>241</width>
+      <height>731</height>
+     </size>
+    </property>
+    <property name="whatsThis">
+     <string>Root Folder and Files.
+   As they are now.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>10</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Movie Recipe</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>81</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Curent directory</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>10</y>
+      <width>101</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Future directory</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="movie_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>30</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Title Year Certified Rating</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="movie_recipe_results">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>50</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Movie Recipe Results</string>
     </property>
    </widget>
   </widget>
@@ -38,7 +131,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>290</width>
+     <width>1274</width>
      <height>22</height>
     </rect>
    </property>

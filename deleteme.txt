@@ -22,3 +22,26 @@ hm, might want to update. my gist..
 
 I have already been suggested to make a __init__ function. i am still 
 learning how to do that. one step at a time. they seem busy.
+
+
+Well I am looking for a way to just use the name column and not the other columns.
+think you know what i am getting at.
+
+I am thinking they made designer for smaller screens. i wish i could zoom out.
+i am thinking i want my window to be 600 x 400 just to start. and the user can 
+do what ever after.  if i could just word wrap for just this file it would be nice.
+
+I am lost. don't know what to do at the moment. trying to see a full size window 
+at 600 x 400 or something.
+
+I will be back on line later lat me know what you think.
+
+why am I using media center master. because its 80% finished product. 
+mostly because it works. but it is unfinished. it has a hard time telling 
+you what differences of movie and tv-show movies are.
+
+what I am doing is showing you how buggy that software is. its not telling 
+me its extension in the software. its got to be media centers catch that 
+is not sharing the extension. 
+
+i really liked mcm recipe list box showed the mediate results. i think i need to do the same.

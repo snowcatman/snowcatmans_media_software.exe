@@ -22,27 +22,45 @@ class MainWindow(UiBase):
         self.ui.actionexit.triggered.connect(self.exit)
         self.ui.actionAbout.triggered.connect(self.about)
         self.ui.actionOpen_Folder.triggered.connect(self.folderOpen)
-        self.model = QFileSystemModel()
 
-        # path = (expanduser("~")+'\\Videos')
+        self.model = QFileSystemModel()
+        # set defualt directory
         self.path = (expanduser("~")+'\\Videos')
         index = self.model.setRootPath(self.path)
+        # <widget class="QTreeView" name="treeView">
         self.ui.treeView.setModel(self.model)
         self.ui.treeView.setAnimated(False)
         self.ui.treeView.setIndentation(20)
         self.ui.treeView.setSortingEnabled(True)
         self.ui.treeView.setRootIndex(index)
+        self.ui.treeView.setColumnHidden(1, True)
+        self.ui.treeView.setColumnHidden(2, True)
+        self.ui.treeView.setColumnHidden(3, True)
+        # <widget class="QTreeView" name="treeView_future">
+        self.ui.treeView_future.setModel(self.model)
+        self.ui.treeView_future.setAnimated(False)
+        self.ui.treeView_future.setIndentation(20)
+        self.ui.treeView_future.setSortingEnabled(True)
+        self.ui.treeView_future.setRootIndex(index)
+        self.ui.treeView_future.setColumnHidden(1, True)
+        self.ui.treeView_future.setColumnHidden(2, True)
+        self.ui.treeView_future.setColumnHidden(3, True)
+        # <widget class="QLineEdit" name="movie_lineEdit">
+
+        # self.ui.movie_lineEdit.???
+
 
     def folderOpen(self):
-
         input_dir = QFileDialog.getExistingDirectory(
             None, 'Select a folder:', self.path)
-        if input_dir == '':
+        if input_dir == '': 
             return self.path
         else:
             pass
-        
         index = self.model.setRootPath(input_dir)
+        self.ui.treeView.setRootIndex(index)
+    
+    def futureTreeview(self):
         self.ui.treeView.setRootIndex(index)
 
     def about(self):
