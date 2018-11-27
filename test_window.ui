@@ -60,19 +60,6 @@
    As they are now.</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>280</x>
-      <y>10</y>
-      <width>111</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Movie Recipe</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
@@ -123,6 +110,58 @@
     </property>
     <property name="text">
      <string>Movie Recipe Results</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TVshow_movie_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>90</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Title Year Certified Rating</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Tvshow_movie_recipe_results">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>110</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TVshow Movie Results</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TVshow_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>150</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Title Year Certified Rating Season Title episode</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Tvshow_recipe_results">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>170</y>
+      <width>211</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TVshow Recipe Results</string>
     </property>
    </widget>
   </widget>

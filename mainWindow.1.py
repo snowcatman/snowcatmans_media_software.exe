@@ -22,17 +22,21 @@ class MainWindow(UiBase):
         self.ui.actionexit.triggered.connect(self.exit)
         self.ui.actionAbout.triggered.connect(self.about)
         self.ui.actionOpen_Folder.triggered.connect(self.folderOpen)
+        
+        
+        # lineEdit movies
+        self.ui.movie_lineEdit.textChanged.connect(self.text_Changed)
 
         self.model = QFileSystemModel()
         # set defualt directory
         self.path = (expanduser("~")+'\\Videos')
-        index = self.model.setRootPath(self.path)
+        self.index = self.model.setRootPath(self.path)
         # <widget class="QTreeView" name="treeView">
         self.ui.treeView.setModel(self.model)
         self.ui.treeView.setAnimated(False)
         self.ui.treeView.setIndentation(20)
         self.ui.treeView.setSortingEnabled(True)
-        self.ui.treeView.setRootIndex(index)
+        self.ui.treeView.setRootIndex(self.index)
         self.ui.treeView.setColumnHidden(1, True)
         self.ui.treeView.setColumnHidden(2, True)
         self.ui.treeView.setColumnHidden(3, True)
@@ -41,14 +45,42 @@ class MainWindow(UiBase):
         self.ui.treeView_future.setAnimated(False)
         self.ui.treeView_future.setIndentation(20)
         self.ui.treeView_future.setSortingEnabled(True)
-        self.ui.treeView_future.setRootIndex(index)
+        self.ui.treeView_future.setRootIndex(self.index)
         self.ui.treeView_future.setColumnHidden(1, True)
         self.ui.treeView_future.setColumnHidden(2, True)
         self.ui.treeView_future.setColumnHidden(3, True)
-        # <widget class="QLineEdit" name="movie_lineEdit">
-
-        # self.ui.movie_lineEdit.???
-
+    
+    # text input for movies
+    def text_Changed(self):
+        FakeFile = ('\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+        user_text_input = self.sender().text()
+        if self.sender().text() == 'Title Year Certified Rating':
+            self.ui.movie_recipe_results.setText(self.sender().text())
+            print(repr(self.sender().text()))
+        else:
+            pass
+        # print(user_text_input)
+        # print(repr(self)) # print(self)
+        # want to pass fake results to change label text.
+        # I liked the recipe results in media center master
+        # """" best movie ever, The 2018(use curent year) PG(certified rating)""""
+        pass
+    
+         ## text input for movies
+    #def text_Changed(self):
+        #FakeFile = ('\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+        #user_text_input = self.sender().text()
+        #if self.sender().text() == 'Title Year Certified Rating':
+        #    self.ui.movie_recipe_results.setText(self.sender().text())
+        #    print(repr(self.sender().text()))
+        #else:
+        #    pass
+        ## print(user_text_input)
+        ## print(repr(self)) # print(self)
+        ## want to pass fake results to change label text.
+        ## I liked the recipe results in media center master
+        ## """" best movie ever, The 2018(use curent year) PG(certified rating)""""
+        # pass
 
     def folderOpen(self):
         input_dir = QFileDialog.getExistingDirectory(
@@ -61,7 +93,7 @@ class MainWindow(UiBase):
         self.ui.treeView.setRootIndex(index)
     
     def futureTreeview(self):
-        self.ui.treeView.setRootIndex(index)
+        self.ui.treeView.setRootIndex(self.index)
 
     def about(self):
         QMessageBox.about(self, "About", "This is a Template")
