@@ -64,16 +64,16 @@ class MainWindow(UiBase):
         
         # if text input is from lineEdit change label text
         def label_output(self):
-            print('here')
+            
             if self.sender().objectName() == ('movie_lineEdit'):
                 self.ui.movie_recipe_results.setText(self.sender().text())
-                print('here')
+                
             elif self.sender().objectName() == ('TVshow_movie_lineEdit'):
                 self.ui.Tvshow_movie_recipe_results.setText(self.sender().text())
-                print('here')
+                
             elif self.sender().objectName() == ('TVshow_lineEdit'):
                 self.ui.Tvshow_recipe_results.setText(self.sender().text())
-                print('here')
+                
             else:
                 pass
 
