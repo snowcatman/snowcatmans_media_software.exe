@@ -56,23 +56,43 @@ class MainWindow(UiBase):
         self.ui.treeView_future.setColumnHidden(3, True)
     
 
-    class media_fake():
+    class fake_media():
         now = datetime.now()
         fake_year = (now.strftime("%Y"))
-
-        Title = "The Best Movie Ever " # Our fake Title
+        FakefolderFile = \
+        ('C:\\mymovies\\B\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+        Title = "The Best Movie Ever" # Our fake Title
         Year = (fake_year) # always the curent year
         CR = "Pg" # CR = Certified Rating 
+
+        def F_O(self): # F_O = Fake Orginize
+            parts = self.FakefolderFile.split("\\")
+            A = str(self.Title)
+            B = self.Title+str(self.Year)
+            # B = re.match(self.Title, str(self.Year))
+            C = self.Title+str(self.Year)+ self.CR
+            # C = re.match(self.Title, str(self.Year), self.CR)
+            D = "Must have Title and Year name"
+            print(parts)
+            print(parts[3])
+            print(parts[3].split("2018"))
+            # print(A+B+C+D)
+            # print(A, B, C, D)
         
+        #def F_O_A(self): # fake orginizer alpha
+            #print(self.F_O.A+self.F_O.B+self.F_O.C+self.F_O.D)
+            #obj1 = self.F_O() #o1.x=10
+            #obj2 = fake_media() #o2.x=10
+        #print(str(obj1.x))
+        #print(str(obj2.x))
+        #F_O(obj1) #o1.x=20
+        #F_O(obj2) #o2.x=20
+        #F_O(obj1) #o1.x=30
+        #print(str(obj1.x))
+        #print(str(obj2.x))
 
-        def F_O_(self): # F_O_ = Fake Orginize
-            T_ = (Title)
-            T_Y_ = re.match(Title, Year)
-            T_Y_CR_ = re.match(Title, Year, CR)
-            T_CR_ = ("Must have Title and Year name")
-        # 
 
-
+    fake_media().F_O()
     # rules for media title
     class media_title():
         pass
@@ -94,6 +114,7 @@ class MainWindow(UiBase):
     # if text input is from lineEdit change label text
     def label_output(self):
         print(self.sender().text().split("2018"))
+        
         # if self.sender().objectName() == ('movie_lineEdit'):
             #self.ui.movie_recipe_results.setText(mtf+" "+myf+" "+mcrf)
             #if self.sender().text()[0:5].lower() != "title":
