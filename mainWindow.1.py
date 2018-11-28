@@ -7,6 +7,9 @@ from PyQt5.QtGui import QIcon
 import pathlib
 import PyQt5.uic
 import sys
+# snowcatmans_media_filter takes folder and file info
+# and sort title year and certified rating etc.
+import snowcatmans_media_filter as smf
 
 Ui, UiBase = PyQt5.uic.loadUiType(pathlib.Path(__file__).with_name
                                   ('test_window.ui'),)
@@ -24,8 +27,10 @@ class MainWindow(UiBase):
         self.ui.actionOpen_Folder.triggered.connect(self.folderOpen)
         
         
-        # lineEdit movies
+        # lineEdit input from users. movies, tvmovies, tvshows
         self.ui.movie_lineEdit.textChanged.connect(self.text_Changed)
+        self.ui.TVshow_movie_lineEdit.textChanged.connect(self.text_Changed)
+        self.ui.TVshow_lineEdit.textChanged.connect(self.text_Changed)
 
         self.model = QFileSystemModel()
         # set defualt directory
@@ -50,38 +55,31 @@ class MainWindow(UiBase):
         self.ui.treeView_future.setColumnHidden(2, True)
         self.ui.treeView_future.setColumnHidden(3, True)
     
-    # text input for movies
+    # user text input from movies, tv movies, tvshows
     def text_Changed(self):
-        FakeFile = ('\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
-        user_text_input = self.sender().text()
-        if self.sender().text() == 'Title Year Certified Rating':
-            self.ui.movie_recipe_results.setText(self.sender().text())
-            print(repr(self.sender().text()))
-        else:
-            pass
-        # print(user_text_input)
-        # print(repr(self)) # print(self)
-        # want to pass fake results to change label text.
-        # I liked the recipe results in media center master
-        # """" best movie ever, The 2018(use curent year) PG(certified rating)""""
-        pass
-    
-         ## text input for movies
-    #def text_Changed(self):
-        #FakeFile = ('\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
-        #user_text_input = self.sender().text()
-        #if self.sender().text() == 'Title Year Certified Rating':
-        #    self.ui.movie_recipe_results.setText(self.sender().text())
-        #    print(repr(self.sender().text()))
-        #else:
-        #    pass
-        ## print(user_text_input)
-        ## print(repr(self)) # print(self)
-        ## want to pass fake results to change label text.
-        ## I liked the recipe results in media center master
-        ## """" best movie ever, The 2018(use curent year) PG(certified rating)""""
-        # pass
+        user_text = [self.sender().objectName(), repr(self.sender().text())]
+        print(user_text) #wanting to know witch lineEdit text is changing?
+        # user_text_input = self.sender().text()
+        # print(repr(self.sender().text()))
+        
+        # if text input is from lineEdit change label text
+        def label_output(self):
+            print('here')
+            if self.sender().objectName() == ('movie_lineEdit'):
+                self.ui.movie_recipe_results.setText(self.sender().text())
+                print('here')
+            elif self.sender().objectName() == ('TVshow_movie_lineEdit'):
+                self.ui.Tvshow_movie_recipe_results.setText(self.sender().text())
+                print('here')
+            elif self.sender().objectName() == ('TVshow_lineEdit'):
+                self.ui.Tvshow_recipe_results.setText(self.sender().text())
+                print('here')
+            else:
+                pass
 
+        label_output(self)
+
+    # for gwtting directories of media files
     def folderOpen(self):
         input_dir = QFileDialog.getExistingDirectory(
             None, 'Select a folder:', self.path)
@@ -92,6 +90,7 @@ class MainWindow(UiBase):
         index = self.model.setRootPath(input_dir)
         self.ui.treeView.setRootIndex(index)
     
+    # to show user what folders and files will look like after they submit
     def futureTreeview(self):
         self.ui.treeView.setRootIndex(self.index)
 
@@ -106,3 +105,34 @@ if __name__ == '__main__':
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
+
+# filtering media for naming labels
+    # title = "the best movie ever"
+    # year = this year "2018" for the moment
+    # certified rating = "PG"
+    # FakefolderFile = \
+    # ('C:\\mymovies\\B\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+    
+    # text input for movies
+    # def text_Changed(self):
+
+        #FakeFolderFile = \
+        # ('C:\\mymovies\\B\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+        # Title = 'the best movie ever '
+        # Year = '2018 '
+        # Certified = ['PG ']
+        # Rating = Certified
+
+        # user_text_input = self.sender().text()
+        # if self.sender().text() == 'Title Year Certified Rating':
+        #    self.ui.movie_recipe_results.setText(self.sender().text())
+        #    print(repr(self.sender().text()))
+        #else:
+        #    pass
+        ## print(user_text_input)
+        ## print(repr(self)) # print(self)
+        ## want to pass fake results to change label text.
+        ## I liked the recipe results in media center master
+        ## """" best movie ever, The 2018(use curent year) PG(certified rating)""""
+        # pass
