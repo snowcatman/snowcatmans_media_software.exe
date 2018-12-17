@@ -1,82 +1,83 @@
-import sys, os
-from os.path import expanduser
-from PyQt5.QtWidgets import QMainWindow, QApplication, \
-QWidget, QPushButton, QAction, QDesktopWidget, QPushButton, \
-QMessageBox, QFileSystemModel, QTreeView, QVBoxLayout, \
-QAbstractItemView, QFileDialog, QTreeWidgetItem
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import pyqtSlot
+#!/bin/python3
 
-class App(QMainWindow):
- 
+from PyQt5.QtWidgets import QApplication, QMainWindow
+from startwindow import Ui_startWindow
+from homewindow import Ui_homeWindow
+from window1 import Ui_Window1
+from window2 import Ui_Window2
+from window3 import Ui_Window3
+
+
+class start(QMainWindow, Ui_startWindow):
     def __init__(self):
-        super().__init__()
-        self.title = 'PyQt5 menu - Template'
-        self.initUI()
- 
-    def initUI(self):
-        self.resize(640, 400)
-        self.setWindowTitle('My Template example')
-        self.center()
+        super(start, self).__init__(None)
+        self.setupUi(self)
+        self.homeButton.clicked.connect(self.toHome)
+        self.home = home()
 
-        # menubar        
-        mainMenu = self.menuBar() 
-        fileMenu = mainMenu.addMenu('File')
-        editMenu = mainMenu.addMenu('Edit')
-        viewMenu = mainMenu.addMenu('View')
-        searchMenu = mainMenu.addMenu('Search')
-        toolsMenu = mainMenu.addMenu('Tools')
-        helpMenu = mainMenu.addMenu('Help')
-        # open folder in file menu in menu bar
-        openFolder = QAction(QIcon('unknown.png'), 'Open Folder', self)
-        openFolder.setShortcut('Ctrl+O')
-        openFolder.setStatusTip('Add Select Root Folder')
-        openFolder.triggered.connect(self.folderOpen)
-        fileMenu.addAction(openFolder)        
-        # exit button in file menu in menu bar
-        exitButton = QAction(QIcon('unknown.png'), 'Exit', self)
-        exitButton.setShortcut('Ctrl+Q')
-        exitButton.setStatusTip('Exit application')
-        exitButton.triggered.connect(self.close)
-        fileMenu.addAction(exitButton)
-        # About button in help menu in menu bar
-        aboutButton = QAction(QIcon('unknown.png'), 'About', self)
-        aboutButton.setStatusTip('About Application')
-        aboutButton.triggered.connect(self.about)
-        helpMenu.addAction(aboutButton)
+    def toHome(self):
+        self.home.show()
+        self.hide()
 
-# ----- defult tree view -- untell root folder added ------
-# we need to know each root directory to add a search peramitor
-# of the meadia in question. could use the open folder button 
-# in file menu. updating or adding to a defual tree view of selected 
-# folders would be nice .
-                                # I know i don't know exactly 
-                                # what i am doing. To add the 
-                                # treeview. to the main window.
-                                # I am a beginner. Thank you.
+class home(QMainWindow, Ui_homeWindow):
+    def __init__(self):
+        super(home, self).__init__(None)
+        self.setupUi(self)
+        self.window1Button.clicked.connect(self.toWindow1)
+        self.window2Button.clicked.connect(self.toWindow2)
+        self.window3Button.clicked.connect(self.toWindow3)
+        self.Window1 = window1(self)
+        self.Window2 = window2(self)
+        self.Window3 = window3(self)
 
-        
-        
+    def toWindow1(self):
+        self.Window1.show()
+        self.setEnabled(False)
+        self.Window1.setEnabled(True)
 
-# -----------------------------------------------------------
+    def toWindow2(self):
+        self.Window2.show()
+        self.setEnabled(False)
+        self.Window2.setEnabled(True)
 
-        self.statusBar().showMessage('Message in statusbar - Template.')
-        self.show()
+    def toWindow3(self):
+        self.Window3.show()
+        self.setEnabled(False)
+        self.Window3.setEnabled(True)
 
-    def folderOpen(self):
-        input_dir = QFileDialog.getExistingDirectory(None, 'Select a folder:', expanduser("~"))
-        return input_dir
+    def reEnable(self):
+        self.setEnabled(True)
 
-    def about(self):
-        QMessageBox.about(self, "About", "This is a Template")
+class window1(QMainWindow, Ui_Window1):
+    def __init__(self, home):
+        super(window1, self).__init__(home)
+        self.home = home
+        self.setupUi(self)
+        self.homeButton.clicked.connect(self.toHome)
 
-    def center(self):
-        qr = self.frameGeometry()
-        cp = QDesktopWidget().availableGeometry().center()
-        qr.moveCenter(cp)
-        self.move(qr.topLeft())
+    def toHome(self):
+        self.home.setEnabled(True)
+        self.hide()
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = App()
-    sys.exit(app.exec_())
+
+class window2(QMainWindow, Ui_Window2):
+    def __init__(self, home):
+        super(window2, self).__init__(home)
+        self.home = home
+        self.setupUi(self)
+        self.homeButton.clicked.connect(self.toHome)
+
+    def toHome(self):
+        self.home.setEnabled(True)
+        self.hide()
+
+class window3(QMainWindow, Ui_Window3):
+    def __init__(self, home):
+        super(window3, self).__init__(home)
+        self.home = home
+        self.setupUi(self)
+        self.homeButton.clicked.connect(self.toHome)
+
+    def toHome(self):
+        self.home.setEnabled(True)
+        self.hide()

@@ -1,7 +1,7 @@
 import os, string, stat, time, sys, re
 
-#  def has_hidden_attripute(filepath):
-#      return bool(os.stat(filepath).st_file_attribute & stat.file_attribute_hidden)
+def has_hidden_attripute(filepath):
+    return bool(os.stat(filepath).st_file_attribute & stat.file_attribute_hidden)
 
 def getlistoffiles(dirname):
     listoffile = os.listdir(dirname)
@@ -14,26 +14,29 @@ def getlistoffiles(dirname):
             allfiles.append(fullpath)
     return allfiles
 
-# def my_path(path):
-  #  for (dirpath, dirnames, filenames) in os.walk(path):
-   #     path = (os.path.join(dirpath, dirnames, filenames)
-    # pass
+def AMy_Folder_File_Filter(folderfilelist):
+    # dirnames = folderfilelist
+    # print(dirnames)
+    return folderfilelist
+
+def My_Folder_File_Filter(path): 
+    dirpath = list()
+    dirnames = list()
+    filenames = list()
+    listOfTvShows = list()
+    listOfMovies = list()
     
-
-
-def FFMF(path): 
-    # print('before path', path)
+    # print('step 1')
+    # print(path)
     for (dirpath, dirnames, filenames) in os.walk(path):
-        # print('raw dirpath split', dirpath)
-        # print('raw dirdirnames split', dirnames)
-        # print('raw filenames split', filenames)
-
+        print('raw dirpath', dirpath)
+        # print('raw dirdirnames', dirnames)
+        # print('raw filenames', filenames)
         for file in filenames:
             file_name, f_e = os.path.splitext(file)
             f_e = f_e.lower()
             if (f_e == '.mp4') or (f_e == '.avi') or (f_e == '.flv') or (f_e == '.mkv') or (f_e == '.mov'):
-                # print('file name')
-                # print('its extension', f_e)
+                
                 if "trailer" in file_name.lower():
                     this_variable = 101010101010
                 else:
@@ -42,7 +45,9 @@ def FFMF(path):
                     parent2 = pathA[-2]
                     # print('step before if season')
                     if "season" in parent1.lower():
-                        this_variable = 101010101011
+                        if parent2 not in listOfTvShows:
+                            listOfTvShows.append(parent2)
+                        listOfTvShows.append(os.path.join(dirpath, file))
                     else: # movie filter list generater
                         NONO = '\(|\)|\[|\]|\/|\;|\-| 1080dpi'
                         fn = re.sub(NONO, '', file_name)
@@ -53,56 +58,24 @@ def FFMF(path):
                         matchObj2 = re.match(r'^([ a-z0-9A-Z ]+) (\d{4}) ([ a-z0-9A-Z ]+)', parent1, re.I)
                         if fnmatchObj1 and fnmatchObj2 and fnmatchObj1.group(1) == fnmatchObj2.group(1):
                             FnT = fnmatchObj1.group(1) # file
-                            FnTp = fnmatchObj2.group(1) # parent
-                            FnY = fnmatchObj1.group(2) # file
+                            FnTp = fnmatchObj2.group(1)
+                            FnY = fnmatchObj1.group(2)
                             FnYp = fnmatchObj2.group(2) # parent
-                            FnCR = fnmatchObj1.group(3) # file
-                            FnCRp = fnmatchObj2.group(3)   # parent  
+                            FnCR = fnmatchObj1.group(3)
+                            FnCRp = fnmatchObj2.group(3)
                             if matchObj1 and matchObj2 and matchObj1.group(1) == matchObj2.group(1):
                                 rawT = matchObj1.group(1) # file
-                                rawTp = matchObj2.group(1) #parent
-                                rawY = matchObj1.group(2) # file
+                                rawTp = matchObj2.group(1)
+                                rawY = matchObj1.group(2)
                                 rawYp = matchObj2.group(1) # parent
-                                rawCR = matchObj1.group(3) # file
-                                rawCRp = matchObj2.group(1) # parent
-                                # print('before dirpath', dirpath)
+                                rawCR = matchObj1.group(3)
+                                rawCRp = matchObj2.group(1)
+                                
+                                # um... not getting resules wanted
+                                print('before dirpath', dirpath)
                                 file = rawT+' '+FnY+' '+FnCR
                                 dirpath = rawTp+' '+FnYp+' '+FnCRp
-                                # print('after dirpath', dirpath)
-                                
-                                #  path, dirpath, dirnames, file
-                                
-                                #  path = (os.path.join(dirpath, file)
-                                #  print(path)
-                                #  return path
-                                #  newpath = []
-                                #  path, dirpath, dirnames, file = newpath
-                                #  print(newpath)
-        #print('after dirnames', dirnames)
-        #print('after dirpath', dirpath)
-        #print('after file', file)
-        # join path
-        # return path
-        # print('after path', path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# commented the rest out in a paragraph comment
-'''
+                                print('after dirpath', dirpath)
                                 # at this point we want to rebuild join the file 
                                 # structure to make an index for the futere tree view.
                                 # print('path = -->', os.path)
@@ -163,5 +136,3 @@ def exampleofoldmain():
                                 # listOfMovies.append(os.path.join(dirpath, file))
                             else:
                                 listoffiles.append(os.path.join(dirpath, file))
-'''
-# end of file

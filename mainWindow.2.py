@@ -7,12 +7,12 @@ from PyQt5.QtWidgets import QFileSystemModel, QTreeView, QWidget, QVBoxLayout
 from PyQt5.QtGui import QIcon
 import pathlib
 import PyQt5.uic
-# snowcatmans_media_filter takes folder and file info
-# and sort title year and certified rating etc.
-# import snowcatmans_media_filter as smf
+from snowcatmans_media_filter import My_Folder_File_Filter as MFFF
 
 Ui, UiBase = PyQt5.uic.loadUiType(pathlib.Path(__file__).with_name
                                   ('test_window.ui'),)
+
+FakefolderFile = "C:\\mymovies\\B\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4"
 
 
 class MainWindow(UiBase):
@@ -54,13 +54,33 @@ class MainWindow(UiBase):
         self.ui.treeView_future.setColumnHidden(1, True)
         self.ui.treeView_future.setColumnHidden(2, True)
         self.ui.treeView_future.setColumnHidden(3, True)
-    
+
+
+    class FileName():
+        path="<empty_path>"
+        pass
+
+
+    class yourmovie():
+    #    file_name = FileName()
+        pass
+
+
+    class yourtvmovie():
+    #    file_name = FileName()
+        pass
+
+
+    class yourTVShow():
+    #    file_name = FileName()
+        pass
+
 
     class fake_media():
         now = datetime.now()
         fake_year = (now.strftime("%Y"))
-        FakefolderFile = \
-        ('C:\\mymovies\\B\\The Best Movie Ever 2018 PG\\The Best Movie Ever 2018 PG.mp4')
+        FakefolderFile = "C:\\mymovies\\B\\The Best Movie Ever.2018.PG\\The Best Movie Ever.2018.PG.mp4"
+        # FakefolderFile = "C:\\The Best Movie Ever.2018.PG\\The Best Movie Ever.2018.PG.mp4"
         Title = "The Best Movie Ever" # Our fake Title
         Year = (fake_year) # always the curent year
         CR = "Pg" # CR = Certified Rating 
@@ -75,7 +95,7 @@ class MainWindow(UiBase):
             D = "Must have Title and Year name"
             print(parts)
             print(parts[3])
-            print(parts[3].split("2018"))
+            print(parts[3].split("."))
             # print(A+B+C+D)
             # print(A, B, C, D)
         
@@ -109,8 +129,7 @@ class MainWindow(UiBase):
     def text_Changed(self):
         user_text = [self.sender().objectName(), repr(self.sender().text())]
         print(user_text) #wanting to know witch lineEdit text is changing?
-                
-        
+
     # if text input is from lineEdit change label text
     def label_output(self):
         print(self.sender().text().split("2018"))
@@ -166,7 +185,8 @@ if __name__ == '__main__':
     window.show()
     sys.exit(app.exec_())
 
-
+# End of File
+# Notes: Below
 # filtering media for naming labels
     # title = "the best movie ever"
     # year = this year "2018" for the moment

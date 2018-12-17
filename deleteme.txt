@@ -45,3 +45,6 @@ me its extension in the software. its got to be media centers catch that
 is not sharing the extension. 
 
 i really liked mcm recipe list box showed the mediate results. i think i need to do the same.
+
+
+while your doing that. this file i keep sharing with you helped me make list's of movies and tv shows. what it did was grabbed every file. made a big list of them. then filtered out all the other files that were not ending in a proper file extension.
